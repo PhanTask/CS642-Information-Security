@@ -5,34 +5,22 @@ a) password for suleman is 63953293
 b) password for mazharul is 11232020
 
 ## Pseudocode for attack
-
+```
 START
-
 define HASH_SHA256 as the function for calculating the Sha-256 hash of a "{username},{password},{salt}" string
-
 target_hash = T
-
 username = U
-
 salt = S
-
 possible_password_set = the set of all possible passwords based on password length and digit value domain
-
 For password in possible_password_set:
-
     if HASH_SHA256(username,password,salt) == target_hash:
-    
         # we got the right password. Finished
-        
         return password
-        
     else:
-    
         # Wrong password. continue to crack
-        
         continue
-        
 END
+```
 
 
 ## Worst case running time
