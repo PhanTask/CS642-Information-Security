@@ -52,48 +52,27 @@ Wisc0nsin!
 
 ## Correct pseudocode
 
+```
 START
-
 define HASH_scrypt as the function for calculating the scrypt hash of a "{username},{password},{salt}" string
-
 target_hash = T
-
 username = U
-
 salt = S
-
 password_list = Crackstation Smaller Wordlist downloaded from Internet (Human Passwords Only, "realhuman_phill.txt")
-
 chunks = Plenty of chunks divided from password_list (for further parallelled calculation)
-
 pool = create multiprocessing pool (for further parallelled calculation. In my computer, I set process num = 32)
-
-For password_chunk in chunks:
-
+For password_chunk in chunks
     create new process in the pool, and assign a password_chunk to it.
-    
     in each process (parallelled calculation):
-    
         # use HASH_scrypt(username,password,salt) function to find the correct password in the assigned password_chunk
-        
         For password in password_chunk:
-        
             if HASH_scrypt(username,password,salt) == target_hash:
-            
                 # we got the right password. Finished
-                
                 return password
-                
             else:
-            
                 # Wrong password. continue to crack
-                
                 continue
-                
 END
+```
 
 This parallelled algorithm costs around 30 min to find the correct password.
-
-
-
-
